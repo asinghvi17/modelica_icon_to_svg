@@ -2,9 +2,14 @@
 
 include("modelica2svg.jl")
 
-# Directory paths
+# Directory paths - update these to match your setup
+# Path to Modelica Standard Library thermal components
 msl_thermal_dir = "test_msl/ModelicaStandardLibrary/Modelica/Thermal"
+# Output directory for generated SVG files
 output_dir = "thermal_svgs_no_text"
+
+# Create output directory if it doesn't exist
+mkpath(output_dir)
 
 # Find all .mo files
 function find_mo_files(dir)

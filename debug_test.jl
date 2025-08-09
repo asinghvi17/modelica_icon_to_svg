@@ -1,8 +1,25 @@
 include("modelica2svg.jl")
 
 # Test the parser with a simple example
-test_content = read("test_examples/thermal_icon.mo", String)
-println("Content read:")
+# Note: Update the path below to point to your test Modelica file
+# test_content = read("path/to/your/test.mo", String)
+
+# Example annotation for testing
+test_content = """
+annotation (
+    Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}), graphics={
+      Line(
+        origin={-47.5,11.6667},
+        points={{-2.5,-91.6667},{17.5,-71.6667},{-22.5,-51.6667},{17.5,-31.6667},{-22.5,-11.667},{17.5,8.3333},{-2.5,28.3333},{-2.5,48.3333}},
+        smooth=Smooth.Bezier),
+      Polygon(
+        origin={-50.0,68.333},
+        pattern=LinePattern.None,
+        fillPattern=FillPattern.Solid,
+        points={{0.0,21.667},{-10.0,-8.333},{10.0,-8.333}})}))
+"""
+
+println("Content to test:")
 println(test_content)
 println("\n---\n")
 

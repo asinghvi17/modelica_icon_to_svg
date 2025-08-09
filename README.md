@@ -1,10 +1,12 @@
-# Modelica2SVG
+# modelica_icon_to_svg
 
 A Julia script to convert Modelica graphical annotations to SVG format.
 
+Repository: https://github.com/asinghvi17/modelica_icon_to_svg
+
 ## Overview
 
-Modelica2SVG parses Modelica Icon annotations and converts them into scalable vector graphics (SVG). This tool is useful for:
+This tool parses Modelica Icon annotations and converts them into scalable vector graphics (SVG). This tool is useful for:
 - Generating visual documentation of Modelica components
 - Creating icon libraries from Modelica packages
 - Extracting graphics for use in other applications
@@ -80,12 +82,11 @@ coord_system, graphics = parse_annotation(content)
 svg = to_svg(coord_system, graphics; width=200, height=200, skip_text=true)
 ```
 
-## Examples
+## Debug Scripts
 
-The `test_examples/` directory contains sample Modelica files:
-- `thermal_icon.mo` - Thermal package icon with Bezier curves
-- `simple_shapes.mo` - Basic shapes with colors
-- `parametric_text.mo` - Text annotation examples
+The repository includes debug scripts for testing:
+- `debug_test.jl` - Tests the parser with example files
+- `debug_detailed.jl` - Tests parsing with direct annotation strings
 
 ## Converting to PNG
 
@@ -118,17 +119,17 @@ magick output.svg output.png
 
 ## Testing with Modelica Standard Library
 
-The tool has been tested with the Modelica Standard Library thermal components:
+The tool has been tested with the Modelica Standard Library thermal components. The `process_thermal.jl` script can batch process Modelica files:
 
 ```bash
-# Clone MSL
+# Clone MSL (if needed)
 git clone --depth 1 https://github.com/modelica/ModelicaStandardLibrary.git
 
-# Process thermal components
+# Process thermal components (adjust paths in script as needed)
 julia process_thermal.jl
 ```
 
-Successfully processes components from:
+The script processes components from packages like:
 - Thermal.HeatTransfer
 - Thermal.FluidHeatFlow
 

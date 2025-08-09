@@ -1,0 +1,21 @@
+# Julia artifacts
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+/Manifest.toml
+
+# Test outputs
+thermal_svgs_no_text/
+test_msl/
+*.svg
+*.png
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*~
